@@ -18,6 +18,7 @@ package org.vertx.groovy.core.http
 
 import org.vertx.groovy.core.buffer.Buffer
 import org.vertx.groovy.core.streams.WriteStream
+import org.vertx.java.core.http.MultiMap
 
 /**
  * Represents a client-side HTTP request.<p>
@@ -73,7 +74,7 @@ interface HttpClientRequest extends WriteStream<HttpClientRequest> {
   /**
    * @return The HTTP headers
    */
-  Map<String, Object> getHeaders()
+  MultiMap getHeaders()
 
   /**
    * Put an HTTP header - fluent API

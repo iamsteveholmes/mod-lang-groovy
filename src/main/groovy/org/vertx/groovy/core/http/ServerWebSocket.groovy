@@ -16,6 +16,8 @@
 
 package org.vertx.groovy.core.http
 
+import org.vertx.java.core.http.MultiMap
+
 /**
  * Represents a server side WebSocket that is passed into a the websocketHandler of an {@link HttpServer}<p>
  * Instances of this class are not thread-safe<p>
@@ -28,6 +30,11 @@ interface ServerWebSocket extends WebSocket {
    * @return The path the websocket is attempting to connect at
    */
   String getPath();
+
+  /**
+   * A map of all headers in the request to upgrade to websocket
+   */
+  MultiMap getHeaders();
 
   /**
    * Reject the WebSocket<p>

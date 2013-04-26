@@ -4,6 +4,7 @@ import org.vertx.groovy.core.buffer.Buffer
 import org.vertx.groovy.core.http.HttpServerRequest
 import org.vertx.groovy.core.http.HttpServerResponse
 import org.vertx.java.core.Handler
+import org.vertx.java.core.http.MultiMap
 
 import javax.net.ssl.SSLPeerUnverifiedException
 import javax.security.cert.X509Certificate
@@ -62,12 +63,12 @@ class DefaultHttpServerRequest implements HttpServerRequest {
   }
 
   @Override
-  Map<String, String> getHeaders() {
+  MultiMap getHeaders() {
     jRequest.headers()
   }
 
   @Override
-  Map<String, String> getParams() {
+  MultiMap getParams() {
     jRequest.params()
   }
 

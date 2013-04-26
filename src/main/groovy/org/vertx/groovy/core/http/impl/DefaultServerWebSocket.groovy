@@ -2,8 +2,8 @@ package org.vertx.groovy.core.http.impl
 
 import org.vertx.groovy.core.buffer.Buffer
 import org.vertx.groovy.core.http.ServerWebSocket
-import org.vertx.groovy.core.http.WebSocket
 import org.vertx.java.core.Handler
+import org.vertx.java.core.http.MultiMap
 
 /*
  * Copyright 2013 Red Hat, Inc.
@@ -129,6 +129,11 @@ class DefaultServerWebSocket implements ServerWebSocket {
   @Override
   String getPath() {
     jServerWebSocket.path()
+  }
+
+  @Override
+  MultiMap getHeaders() {
+    jServerWebSocket.headers()
   }
 
   @Override

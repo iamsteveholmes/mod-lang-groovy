@@ -18,6 +18,7 @@ package org.vertx.groovy.core.http
 
 import org.vertx.groovy.core.buffer.Buffer
 import org.vertx.groovy.core.streams.WriteStream
+import org.vertx.java.core.http.MultiMap
 
 /**
  * Represents a server-side HTTP response.<p>
@@ -84,7 +85,7 @@ interface HttpServerResponse extends WriteStream<HttpServerResponse> {
   /**
    * @return The HTTP headers
    */
-  Map<String, Object> getHeaders()
+  MultiMap getHeaders()
 
   /**
    * Put an HTTP header - fluent API
@@ -99,7 +100,7 @@ interface HttpServerResponse extends WriteStream<HttpServerResponse> {
   /**
    * @return The HTTP trailers
    */
-  Map<String, Object> getTrailers()
+  MultiMap getTrailers()
 
   /**
    * Put an HTTP trailer - fluent API
